@@ -1,0 +1,3274 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20232.23.0805.0415                               -->
+<workbook original-version='18.1' source-build='2023.2.1 (20232.23.0805.0415)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AccessibleZoneTabOrder.true...AccessibleZoneTabOrder />
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <MapboxVectorStylesAndLayers />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelExtractV2.true...ObjectModelExtractV2 />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+    <WorksheetBackgroundTransparency />
+    <ZoneBackgroundTransparency />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='Parameter - Search Item' datatype='string' name='[Item Parameter]' param-domain-type='any' role='measure' type='nominal' value='&quot;bubbles, avocado&quot;'>
+        <calculation class='tableau' formula='&quot;bubbles, avocado&quot;' />
+      </column>
+    </datasource>
+    <datasource caption='consumer_demographics' inline='true' name='federated.19i63st19tec4y14lvvfr1wktoz8' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='consumer_demographics' name='excel-direct.1srd9j61g6a37l15q9emj0mg0srn'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/greg/OneDrive - University of Utah/Documents/GRG/IS6813/consumer_demographics.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+      </connection>
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph />
+    </datasource>
+    <datasource caption='FACT_MARKET_DEMAND' inline='true' name='federated.1lvxs3r1gu5qps116lsjl10k97jn' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='FACT_MARKET_DEMAND' name='textscan.0o63x190tsfkgw1aux9ul19y4erh'>
+            <connection class='textscan' directory='C:/Users/greg/Downloads' filename='FACT_MARKET_DEMAND.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='zip_to_market_unit_mapping' name='textscan.1gg0a5w0flwxj816sy4zu0kh0ted'>
+            <connection class='textscan' directory='C:/Users/greg/OneDrive - University of Utah/Documents/GRG/IS6813' filename='zip_to_market_unit_mapping.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='consumer_demographics' name='excel-direct.1sswckc1hzeib01722dr01mik41d'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/greg/OneDrive - University of Utah/Documents/GRG/IS6813/consumer_demographics.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='excel-direct.1sswckc1hzeib01722dr01mik41d' name='Data' table='[Data$]' type='table'>
+          <columns gridOrigin='A1:H10001:no:A1:H10001:0' header='yes' outcome='6'>
+            <column datatype='string' name='Geography Name' ordinal='0' />
+            <column datatype='integer' name='Zip' ordinal='1' />
+            <column datatype='string' name='City' ordinal='2' />
+            <column datatype='string' name='State' ordinal='3' />
+            <column datatype='string' name='Segment' ordinal='4' />
+            <column datatype='string' name='Criteria' ordinal='5' />
+            <column datatype='integer' name='Count' ordinal='6' />
+            <column datatype='string' name='Criteria_Unit' ordinal='7' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
+          <relation connection='textscan.0o63x190tsfkgw1aux9ul19y4erh' name='FACT_MARKET_DEMAND.csv' table='[FACT_MARKET_DEMAND#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='date' name='DATE' ordinal='0' />
+              <column datatype='integer' name='MARKET_KEY' ordinal='1' />
+              <column datatype='string' name='CALORIC_SEGMENT' ordinal='2' />
+              <column datatype='string' name='CATEGORY' ordinal='3' />
+              <column datatype='real' name='UNIT_SALES' ordinal='4' />
+              <column datatype='real' name='DOLLAR_SALES' ordinal='5' />
+              <column datatype='string' name='MANUFACTURER' ordinal='6' />
+              <column datatype='string' name='BRAND' ordinal='7' />
+              <column datatype='string' name='PACKAGE' ordinal='8' />
+              <column datatype='string' name='ITEM' ordinal='9' />
+            </columns>
+          </relation>
+          <relation connection='textscan.1gg0a5w0flwxj816sy4zu0kh0ted' name='zip_to_market_unit_mapping.csv' table='[zip_to_market_unit_mapping#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='integer' name='ZIP_CODE' ordinal='0' />
+              <column datatype='integer' name='MARKET_KEY' ordinal='1' />
+            </columns>
+          </relation>
+          <relation connection='excel-direct.1sswckc1hzeib01722dr01mik41d' name='Data' table='[Data$]' type='table'>
+            <columns gridOrigin='A1:H10001:no:A1:H10001:0' header='yes' outcome='6'>
+              <column datatype='string' name='Geography Name' ordinal='0' />
+              <column datatype='integer' name='Zip' ordinal='1' />
+              <column datatype='string' name='City' ordinal='2' />
+              <column datatype='string' name='State' ordinal='3' />
+              <column datatype='string' name='Segment' ordinal='4' />
+              <column datatype='string' name='Criteria' ordinal='5' />
+              <column datatype='integer' name='Count' ordinal='6' />
+              <column datatype='string' name='Criteria_Unit' ordinal='7' />
+            </columns>
+          </relation>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <cols>
+          <map key='[BRAND]' value='[FACT_MARKET_DEMAND.csv].[BRAND]' />
+          <map key='[CALORIC_SEGMENT]' value='[FACT_MARKET_DEMAND.csv].[CALORIC_SEGMENT]' />
+          <map key='[CATEGORY]' value='[FACT_MARKET_DEMAND.csv].[CATEGORY]' />
+          <map key='[City]' value='[Data].[City]' />
+          <map key='[Count]' value='[Data].[Count]' />
+          <map key='[Criteria]' value='[Data].[Criteria]' />
+          <map key='[Criteria_Unit]' value='[Data].[Criteria_Unit]' />
+          <map key='[DATE]' value='[FACT_MARKET_DEMAND.csv].[DATE]' />
+          <map key='[DOLLAR_SALES]' value='[FACT_MARKET_DEMAND.csv].[DOLLAR_SALES]' />
+          <map key='[Geography Name]' value='[Data].[Geography Name]' />
+          <map key='[ITEM]' value='[FACT_MARKET_DEMAND.csv].[ITEM]' />
+          <map key='[MANUFACTURER]' value='[FACT_MARKET_DEMAND.csv].[MANUFACTURER]' />
+          <map key='[MARKET_KEY (zip_to_market_unit_mapping.csv)]' value='[zip_to_market_unit_mapping.csv].[MARKET_KEY]' />
+          <map key='[MARKET_KEY]' value='[FACT_MARKET_DEMAND.csv].[MARKET_KEY]' />
+          <map key='[PACKAGE]' value='[FACT_MARKET_DEMAND.csv].[PACKAGE]' />
+          <map key='[Segment]' value='[Data].[Segment]' />
+          <map key='[State]' value='[Data].[State]' />
+          <map key='[UNIT_SALES]' value='[FACT_MARKET_DEMAND.csv].[UNIT_SALES]' />
+          <map key='[ZIP_CODE]' value='[zip_to_market_unit_mapping.csv].[ZIP_CODE]' />
+          <map key='[Zip]' value='[Data].[Zip]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[FACT_MARKET_DEMAND.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[zip_to_market_unit_mapping.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Data]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:H10001:no:A1:H10001:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DATE</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[DATE]</local-name>
+            <parent-name>[FACT_MARKET_DEMAND.csv]</parent-name>
+            <remote-alias>DATE</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_MARKET_DEMAND.csv_3EC3C624F7164D459625E1D3524D5017]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MARKET_KEY</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[MARKET_KEY]</local-name>
+            <parent-name>[FACT_MARKET_DEMAND.csv]</parent-name>
+            <remote-alias>MARKET_KEY</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_MARKET_DEMAND.csv_3EC3C624F7164D459625E1D3524D5017]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CALORIC_SEGMENT</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[CALORIC_SEGMENT]</local-name>
+            <parent-name>[FACT_MARKET_DEMAND.csv]</parent-name>
+            <remote-alias>CALORIC_SEGMENT</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_MARKET_DEMAND.csv_3EC3C624F7164D459625E1D3524D5017]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>CATEGORY</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[CATEGORY]</local-name>
+            <parent-name>[FACT_MARKET_DEMAND.csv]</parent-name>
+            <remote-alias>CATEGORY</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_MARKET_DEMAND.csv_3EC3C624F7164D459625E1D3524D5017]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>UNIT_SALES</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[UNIT_SALES]</local-name>
+            <parent-name>[FACT_MARKET_DEMAND.csv]</parent-name>
+            <remote-alias>UNIT_SALES</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_MARKET_DEMAND.csv_3EC3C624F7164D459625E1D3524D5017]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DOLLAR_SALES</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[DOLLAR_SALES]</local-name>
+            <parent-name>[FACT_MARKET_DEMAND.csv]</parent-name>
+            <remote-alias>DOLLAR_SALES</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_MARKET_DEMAND.csv_3EC3C624F7164D459625E1D3524D5017]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MANUFACTURER</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[MANUFACTURER]</local-name>
+            <parent-name>[FACT_MARKET_DEMAND.csv]</parent-name>
+            <remote-alias>MANUFACTURER</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_MARKET_DEMAND.csv_3EC3C624F7164D459625E1D3524D5017]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>BRAND</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[BRAND]</local-name>
+            <parent-name>[FACT_MARKET_DEMAND.csv]</parent-name>
+            <remote-alias>BRAND</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_MARKET_DEMAND.csv_3EC3C624F7164D459625E1D3524D5017]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PACKAGE</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[PACKAGE]</local-name>
+            <parent-name>[FACT_MARKET_DEMAND.csv]</parent-name>
+            <remote-alias>PACKAGE</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_MARKET_DEMAND.csv_3EC3C624F7164D459625E1D3524D5017]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ITEM</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[ITEM]</local-name>
+            <parent-name>[FACT_MARKET_DEMAND.csv]</parent-name>
+            <remote-alias>ITEM</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_MARKET_DEMAND.csv_3EC3C624F7164D459625E1D3524D5017]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ZIP_CODE</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ZIP_CODE]</local-name>
+            <parent-name>[zip_to_market_unit_mapping.csv]</parent-name>
+            <remote-alias>ZIP_CODE</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[zip_to_market_unit_mapping.csv_EC7851D6617A4A088AE843771AC05B00]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MARKET_KEY</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[MARKET_KEY (zip_to_market_unit_mapping.csv)]</local-name>
+            <parent-name>[zip_to_market_unit_mapping.csv]</parent-name>
+            <remote-alias>MARKET_KEY</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[zip_to_market_unit_mapping.csv_EC7851D6617A4A088AE843771AC05B00]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Geography Name</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Geography Name]</local-name>
+            <parent-name>[Data]</parent-name>
+            <remote-alias>Geography Name</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Data_D7FA03402662478A9F995B324B4339A6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Zip</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Zip]</local-name>
+            <parent-name>[Data]</parent-name>
+            <remote-alias>Zip</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Data_D7FA03402662478A9F995B324B4339A6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>City</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[City]</local-name>
+            <parent-name>[Data]</parent-name>
+            <remote-alias>City</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Data_D7FA03402662478A9F995B324B4339A6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>State</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[State]</local-name>
+            <parent-name>[Data]</parent-name>
+            <remote-alias>State</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Data_D7FA03402662478A9F995B324B4339A6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Segment</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Segment]</local-name>
+            <parent-name>[Data]</parent-name>
+            <remote-alias>Segment</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Data_D7FA03402662478A9F995B324B4339A6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Criteria</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Criteria]</local-name>
+            <parent-name>[Data]</parent-name>
+            <remote-alias>Criteria</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Data_D7FA03402662478A9F995B324B4339A6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Count</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Count]</local-name>
+            <parent-name>[Data]</parent-name>
+            <remote-alias>Count</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Data_D7FA03402662478A9F995B324B4339A6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Criteria_Unit</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Criteria_Unit]</local-name>
+            <parent-name>[Data]</parent-name>
+            <remote-alias>Criteria_Unit</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Data_D7FA03402662478A9F995B324B4339A6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Brand' datatype='string' name='[BRAND]' role='dimension' type='nominal' />
+      <column caption='Caloric Segment' datatype='string' name='[CALORIC_SEGMENT]' role='dimension' type='nominal' />
+      <column caption='Category' datatype='string' name='[CATEGORY]' role='dimension' type='nominal' />
+      <column caption='Fraction Range' datatype='real' name='[Calculation_1580763470071590912]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[UNIT_SALES]*parameter' />
+      </column>
+      <column caption='Item Search Filter' datatype='boolean' name='[Calculation_1959347316881645568]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='[Parameters].[Item Parameter]=&quot;&quot;&#13;&#10;//show everything if the parameter is blank, aka everything is TRUE&#13;&#10;OR (&#13;&#10;    CONTAINS(LOWER([ITEM]),LOWER(SPLIT([Parameters].[Item Parameter],&quot; &quot;,1)))&#13;&#10;    //if [Item] contains the first typed search term&#13;&#10;    AND ( &#13;&#10;        SPLIT([Parameters].[Item Parameter],&quot; &quot;,2) = &quot;&quot;&#13;&#10;        //if there isn&apos;t a second search term, just return TRUE&#13;&#10;        OR CONTAINS(LOWER([ITEM]),LOWER(SPLIT([Parameters].[Item Parameter],&quot; &quot;,2)))&#13;&#10;        //check that the second search term is also in [Item]&#13;&#10;    )&#13;&#10;    AND (SPLIT([Parameters].[Item Parameter],&quot; &quot;,3)=&quot;&quot; OR CONTAINS(LOWER([ITEM]),LOWER(SPLIT([Parameters].[Item Parameter],&quot; &quot;,3))))&#13;&#10;    AND (SPLIT([Parameters].[Item Parameter],&quot; &quot;,4)=&quot;&quot; OR CONTAINS(LOWER([ITEM]),LOWER(SPLIT([Parameters].[Item Parameter],&quot; &quot;,4))))&#13;&#10;    AND (SPLIT([Parameters].[Item Parameter],&quot; &quot;,5)=&quot;&quot; OR CONTAINS(LOWER([ITEM]),LOWER(SPLIT([Parameters].[Item Parameter],&quot; &quot;,5))))&#13;&#10;)' />
+      </column>
+      <column datatype='string' name='[City]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+      <column caption='Criteria Unit' datatype='string' name='[Criteria_Unit]' role='dimension' type='nominal' />
+      <column caption='Date' datatype='date' name='[DATE]' role='dimension' type='ordinal' />
+      <column caption='Dollar Sales' datatype='real' name='[DOLLAR_SALES]' role='measure' type='quantitative' />
+      <column caption='Item' datatype='string' name='[ITEM]' role='dimension' type='nominal' />
+      <column caption='Manufacturer' datatype='string' name='[MANUFACTURER]' role='dimension' type='nominal' />
+      <column aggregation='Sum' caption='MARKET KEY (zip to market unit mapping.csv)' datatype='integer' default-format='*00000' name='[MARKET_KEY (zip_to_market_unit_mapping.csv)]' role='dimension' semantic-role='[ZipCode].[Name]' type='ordinal' />
+      <column caption='Market Key' datatype='integer' name='[MARKET_KEY]' role='dimension' type='ordinal' />
+      <column caption='Package' datatype='string' name='[PACKAGE]' role='dimension' type='nominal' />
+      <column datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column caption='Unit Sales' datatype='real' name='[UNIT_SALES]' role='measure' type='quantitative' />
+      <column aggregation='Sum' caption='Zip Code' datatype='integer' default-format='*00000' name='[ZIP_CODE]' role='dimension' semantic-role='[ZipCode].[Name]' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' default-format='*00000' name='[Zip]' role='dimension' semantic-role='[ZipCode].[Name]' type='ordinal' />
+      <_.fcp.ObjectModelTableType.true...column caption='Data' datatype='table' name='[__tableau_internal_object_id__].[Data_D7FA03402662478A9F995B324B4339A6]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='FACT_MARKET_DEMAND.csv' datatype='table' name='[__tableau_internal_object_id__].[FACT_MARKET_DEMAND.csv_3EC3C624F7164D459625E1D3524D5017]' role='measure' type='quantitative' />
+      <_.fcp.ObjectModelTableType.true...column caption='zip_to_market_unit_mapping.csv' datatype='table' name='[__tableau_internal_object_id__].[zip_to_market_unit_mapping.csv_EC7851D6617A4A088AE843771AC05B00]' role='measure' type='quantitative' />
+      <column-instance column='[BRAND]' derivation='None' name='[none:BRAND:nk]' pivot='key' type='nominal' />
+      <column-instance column='[CALORIC_SEGMENT]' derivation='None' name='[none:CALORIC_SEGMENT:nk]' pivot='key' type='nominal' />
+      <column-instance column='[CATEGORY]' derivation='None' name='[none:CATEGORY:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Forecast Indicator]' derivation='None' forecast-column-base='[Forecast Indicator]' forecast-column-type='forecast-indicator' name='[none:Forecast Indicator:nk]' pivot='key' type='nominal' />
+      <column-instance column='[MANUFACTURER]' derivation='None' name='[none:MANUFACTURER:nk]' pivot='key' type='nominal' />
+      <column-instance column='[DATE]' derivation='Week' name='[wk:DATE:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[DATE]' derivation='Year' name='[yr:DATE:ok]' pivot='key' type='ordinal' />
+      <group caption='Action (Caloric Segment,Category,WEEK(Date))' hidden='true' name='[Action (Caloric Segment,Category,WEEK(Date))]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[CALORIC_SEGMENT]' />
+          <groupfilter function='level-members' level='[CATEGORY]' />
+          <groupfilter function='level-members' level='[wk:DATE:ok]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (YEAR(Date),WEEK(Date))' hidden='true' name='[Action (YEAR(Date),WEEK(Date))]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[yr:DATE:ok]' />
+          <groupfilter function='level-members' level='[wk:DATE:ok]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (Zip Code)' hidden='true' name='[Action (Zip Code)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[ZIP_CODE]' />
+        </groupfilter>
+      </group>
+      <group caption='Caloric Segment Set' name='[Caloric Segment Set]' name-style='unqualified' user:ui-builder='filter-group'>
+        <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+          <groupfilter function='level-members' level='[none:CALORIC_SEGMENT:nk]' />
+          <groupfilter function='member' level='[none:CALORIC_SEGMENT:nk]' member='%null%' />
+        </groupfilter>
+      </group>
+      <extract _.fcp.ObjectModelExtractV2.true...object-id='' _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='C:/Users/greg/OneDrive - University of Utah/Documents/GRG/Tableau tutorial/FACT_MARKET_DEMAND.hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='04/19/2024 09:49:59 PM' username='tableau_internal_user'>
+          <_.fcp.ObjectModelEncapsulateLegacy.false...relation name='Data_D7FA03402662478A9F995B324B4339A6' table='[Extract].[Data_D7FA03402662478A9F995B324B4339A6]' type='table' />
+          <_.fcp.ObjectModelEncapsulateLegacy.true...relation type='collection'>
+            <relation name='FACT_MARKET_DEMAND.csv_3EC3C624F7164D459625E1D3524D5017' table='[Extract].[FACT_MARKET_DEMAND.csv_3EC3C624F7164D459625E1D3524D5017]' type='table' />
+            <relation name='zip_to_market_unit_mapping.csv_EC7851D6617A4A088AE843771AC05B00' table='[Extract].[zip_to_market_unit_mapping.csv_EC7851D6617A4A088AE843771AC05B00]' type='table' />
+            <relation name='Data_D7FA03402662478A9F995B324B4339A6' table='[Extract].[Data_D7FA03402662478A9F995B324B4339A6]' type='table' />
+          </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+          <cols>
+            <map key='[BRAND]' value='[FACT_MARKET_DEMAND.csv_3EC3C624F7164D459625E1D3524D5017].[BRAND]' />
+            <map key='[CALORIC_SEGMENT]' value='[FACT_MARKET_DEMAND.csv_3EC3C624F7164D459625E1D3524D5017].[CALORIC_SEGMENT]' />
+            <map key='[CATEGORY]' value='[FACT_MARKET_DEMAND.csv_3EC3C624F7164D459625E1D3524D5017].[CATEGORY]' />
+            <map key='[City]' value='[Data_D7FA03402662478A9F995B324B4339A6].[City]' />
+            <map key='[Count]' value='[Data_D7FA03402662478A9F995B324B4339A6].[Count]' />
+            <map key='[Criteria]' value='[Data_D7FA03402662478A9F995B324B4339A6].[Criteria]' />
+            <map key='[Criteria_Unit]' value='[Data_D7FA03402662478A9F995B324B4339A6].[Criteria_Unit]' />
+            <map key='[DATE]' value='[FACT_MARKET_DEMAND.csv_3EC3C624F7164D459625E1D3524D5017].[DATE]' />
+            <map key='[DOLLAR_SALES]' value='[FACT_MARKET_DEMAND.csv_3EC3C624F7164D459625E1D3524D5017].[DOLLAR_SALES]' />
+            <map key='[Geography Name]' value='[Data_D7FA03402662478A9F995B324B4339A6].[Geography Name]' />
+            <map key='[ITEM]' value='[FACT_MARKET_DEMAND.csv_3EC3C624F7164D459625E1D3524D5017].[ITEM]' />
+            <map key='[MANUFACTURER]' value='[FACT_MARKET_DEMAND.csv_3EC3C624F7164D459625E1D3524D5017].[MANUFACTURER]' />
+            <map key='[MARKET_KEY (zip_to_market_unit_mapping.csv)]' value='[zip_to_market_unit_mapping.csv_EC7851D6617A4A088AE843771AC05B00].[MARKET_KEY]' />
+            <map key='[MARKET_KEY]' value='[FACT_MARKET_DEMAND.csv_3EC3C624F7164D459625E1D3524D5017].[MARKET_KEY]' />
+            <map key='[PACKAGE]' value='[FACT_MARKET_DEMAND.csv_3EC3C624F7164D459625E1D3524D5017].[PACKAGE]' />
+            <map key='[Segment]' value='[Data_D7FA03402662478A9F995B324B4339A6].[Segment]' />
+            <map key='[State]' value='[Data_D7FA03402662478A9F995B324B4339A6].[State]' />
+            <map key='[UNIT_SALES]' value='[FACT_MARKET_DEMAND.csv_3EC3C624F7164D459625E1D3524D5017].[UNIT_SALES]' />
+            <map key='[ZIP_CODE]' value='[zip_to_market_unit_mapping.csv_EC7851D6617A4A088AE843771AC05B00].[ZIP_CODE]' />
+            <map key='[Zip]' value='[Data_D7FA03402662478A9F995B324B4339A6].[Zip]' />
+          </cols>
+          <refresh>
+            <refresh-event add-from-file-path='FACT_MARKET_DEMAND' increment-value='%null%' refresh-type='create' rows-inserted='24955206' timestamp-start='2024-04-19 21:47:09.305' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>DATE</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[DATE]</local-name>
+              <parent-name>[FACT_MARKET_DEMAND.csv_3EC3C624F7164D459625E1D3524D5017]</parent-name>
+              <remote-alias>DATE</remote-alias>
+              <ordinal>0</ordinal>
+              <family>FACT_MARKET_DEMAND.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>152</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_MARKET_DEMAND.csv_3EC3C624F7164D459625E1D3524D5017]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>MARKET_KEY</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[MARKET_KEY]</local-name>
+              <parent-name>[FACT_MARKET_DEMAND.csv_3EC3C624F7164D459625E1D3524D5017]</parent-name>
+              <remote-alias>MARKET_KEY</remote-alias>
+              <ordinal>1</ordinal>
+              <family>FACT_MARKET_DEMAND.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>200</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_MARKET_DEMAND.csv_3EC3C624F7164D459625E1D3524D5017]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>CALORIC_SEGMENT</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[CALORIC_SEGMENT]</local-name>
+              <parent-name>[FACT_MARKET_DEMAND.csv_3EC3C624F7164D459625E1D3524D5017]</parent-name>
+              <remote-alias>CALORIC_SEGMENT</remote-alias>
+              <ordinal>2</ordinal>
+              <family>FACT_MARKET_DEMAND.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_MARKET_DEMAND.csv_3EC3C624F7164D459625E1D3524D5017]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>CATEGORY</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[CATEGORY]</local-name>
+              <parent-name>[FACT_MARKET_DEMAND.csv_3EC3C624F7164D459625E1D3524D5017]</parent-name>
+              <remote-alias>CATEGORY</remote-alias>
+              <ordinal>3</ordinal>
+              <family>FACT_MARKET_DEMAND.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_MARKET_DEMAND.csv_3EC3C624F7164D459625E1D3524D5017]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>UNIT_SALES</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[UNIT_SALES]</local-name>
+              <parent-name>[FACT_MARKET_DEMAND.csv_3EC3C624F7164D459625E1D3524D5017]</parent-name>
+              <remote-alias>UNIT_SALES</remote-alias>
+              <ordinal>4</ordinal>
+              <family>FACT_MARKET_DEMAND.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>15685</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_MARKET_DEMAND.csv_3EC3C624F7164D459625E1D3524D5017]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>DOLLAR_SALES</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[DOLLAR_SALES]</local-name>
+              <parent-name>[FACT_MARKET_DEMAND.csv_3EC3C624F7164D459625E1D3524D5017]</parent-name>
+              <remote-alias>DOLLAR_SALES</remote-alias>
+              <ordinal>5</ordinal>
+              <family>FACT_MARKET_DEMAND.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>592895</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_MARKET_DEMAND.csv_3EC3C624F7164D459625E1D3524D5017]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>MANUFACTURER</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[MANUFACTURER]</local-name>
+              <parent-name>[FACT_MARKET_DEMAND.csv_3EC3C624F7164D459625E1D3524D5017]</parent-name>
+              <remote-alias>MANUFACTURER</remote-alias>
+              <ordinal>6</ordinal>
+              <family>FACT_MARKET_DEMAND.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_MARKET_DEMAND.csv_3EC3C624F7164D459625E1D3524D5017]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>BRAND</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[BRAND]</local-name>
+              <parent-name>[FACT_MARKET_DEMAND.csv_3EC3C624F7164D459625E1D3524D5017]</parent-name>
+              <remote-alias>BRAND</remote-alias>
+              <ordinal>7</ordinal>
+              <family>FACT_MARKET_DEMAND.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>325</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_MARKET_DEMAND.csv_3EC3C624F7164D459625E1D3524D5017]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>PACKAGE</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[PACKAGE]</local-name>
+              <parent-name>[FACT_MARKET_DEMAND.csv_3EC3C624F7164D459625E1D3524D5017]</parent-name>
+              <remote-alias>PACKAGE</remote-alias>
+              <ordinal>8</ordinal>
+              <family>FACT_MARKET_DEMAND.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>94</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_MARKET_DEMAND.csv_3EC3C624F7164D459625E1D3524D5017]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>ITEM</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[ITEM]</local-name>
+              <parent-name>[FACT_MARKET_DEMAND.csv_3EC3C624F7164D459625E1D3524D5017]</parent-name>
+              <remote-alias>ITEM</remote-alias>
+              <ordinal>9</ordinal>
+              <family>FACT_MARKET_DEMAND.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4688</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[FACT_MARKET_DEMAND.csv_3EC3C624F7164D459625E1D3524D5017]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>ZIP_CODE</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[ZIP_CODE]</local-name>
+              <parent-name>[zip_to_market_unit_mapping.csv_EC7851D6617A4A088AE843771AC05B00]</parent-name>
+              <remote-alias>ZIP_CODE</remote-alias>
+              <ordinal>10</ordinal>
+              <family>zip_to_market_unit_mapping.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>2382</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[zip_to_market_unit_mapping.csv_EC7851D6617A4A088AE843771AC05B00]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>MARKET_KEY</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[MARKET_KEY (zip_to_market_unit_mapping.csv)]</local-name>
+              <parent-name>[zip_to_market_unit_mapping.csv_EC7851D6617A4A088AE843771AC05B00]</parent-name>
+              <remote-alias>MARKET_KEY</remote-alias>
+              <ordinal>11</ordinal>
+              <family>zip_to_market_unit_mapping.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>192</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[zip_to_market_unit_mapping.csv_EC7851D6617A4A088AE843771AC05B00]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Geography Name</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Geography Name]</local-name>
+              <parent-name>[Data_D7FA03402662478A9F995B324B4339A6]</parent-name>
+              <remote-alias>Geography Name</remote-alias>
+              <ordinal>12</ordinal>
+              <family>Data</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>39053</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Data_D7FA03402662478A9F995B324B4339A6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Zip</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Zip]</local-name>
+              <parent-name>[Data_D7FA03402662478A9F995B324B4339A6]</parent-name>
+              <remote-alias>Zip</remote-alias>
+              <ordinal>13</ordinal>
+              <family>Data</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>39053</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Data_D7FA03402662478A9F995B324B4339A6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>City</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[City]</local-name>
+              <parent-name>[Data_D7FA03402662478A9F995B324B4339A6]</parent-name>
+              <remote-alias>City</remote-alias>
+              <ordinal>14</ordinal>
+              <family>Data</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>20666</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Data_D7FA03402662478A9F995B324B4339A6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>State</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[State]</local-name>
+              <parent-name>[Data_D7FA03402662478A9F995B324B4339A6]</parent-name>
+              <remote-alias>State</remote-alias>
+              <ordinal>15</ordinal>
+              <family>Data</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>13</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Data_D7FA03402662478A9F995B324B4339A6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Segment</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Segment]</local-name>
+              <parent-name>[Data_D7FA03402662478A9F995B324B4339A6]</parent-name>
+              <remote-alias>Segment</remote-alias>
+              <ordinal>16</ordinal>
+              <family>Data</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>9</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Data_D7FA03402662478A9F995B324B4339A6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Criteria</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Criteria]</local-name>
+              <parent-name>[Data_D7FA03402662478A9F995B324B4339A6]</parent-name>
+              <remote-alias>Criteria</remote-alias>
+              <ordinal>17</ordinal>
+              <family>Data</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>75</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Data_D7FA03402662478A9F995B324B4339A6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Count</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Count]</local-name>
+              <parent-name>[Data_D7FA03402662478A9F995B324B4339A6]</parent-name>
+              <remote-alias>Count</remote-alias>
+              <ordinal>18</ordinal>
+              <family>Data</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>15343</approx-count>
+              <contains-null>true</contains-null>
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Data_D7FA03402662478A9F995B324B4339A6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Criteria_Unit</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Criteria_Unit]</local-name>
+              <parent-name>[Data_D7FA03402662478A9F995B324B4339A6]</parent-name>
+              <remote-alias>Criteria_Unit</remote-alias>
+              <ordinal>19</ordinal>
+              <family>Data</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+              <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Data_D7FA03402662478A9F995B324B4339A6]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:CALORIC_SEGMENT:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>%null%</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;REGULAR&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;DIET/LIGHT&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:MANUFACTURER:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;ALLYS&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;JORDYS&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;JOLLYS&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;PONYS&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;SWIRE-CC&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;KEKES&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;BEARS&quot;</bucket>
+            </map>
+            <map to='#ff9da7'>
+              <bucket>&quot;COCOS&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:CATEGORY:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;COFFEE&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;SSD&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;SPARKLING WATER&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;ING ENHANCED WATER&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;ENERGY&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:BRAND:nk]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;BARS&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;BUBBLE JOY BOUNCE&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;DIET BUBBLE JOY ADVANTAGEOUS PLANT-BASED SWEENTENERS&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;DIET MIST TWST&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;DIET SIZZLE ROOT BEER&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;ELF BUBBLES TIPCAL&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;FRUITWATER SPARKLING&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;HILL MOISTURE ICE&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;INSTANT ASSISTANT SPARKLING&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;LAUGHING MYTHICAL BEVERAGE CHAI HAI&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;MYTHICAL BEVERAGE ABGREENERUTELY ZERO&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;PAPI ONE&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;PEPPY JUICY SODA ZERO SUGAR&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;SINGLE GROUP&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;SUPER-DUPER ORGANIC&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;VITAMINAL FLOW 10&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;ABCS&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;BUBBLE JOY ADVANTAGEOUS COFFEE ZERO SUGAR VANILLA&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;CUPADA ARID REMAINING&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;DIET HANSENIZZLE&apos;S&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;DIET PAPI WILD CHERRY&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;ELF BUBBLES GINGER&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;FIZZY COMBINATIONS&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;HILL MOISTURE BLACK LABEL&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;HILL MOISTURE THRASHED APPLE&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;KOOL! ULTIMATE&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;MIST TWST NAT CBRY&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;ONLY ORGANIC&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;PAPI ZERO SUGAR CHERRY&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;RESIDENT&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;SQUARE&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;TIPCAL PUNCH&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;ASTRAL BEVERAGE&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;BUBBLE JOY ADVANTAGEOUS GA PEACH&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;DIET BUBBLE JOY ADVANTAGEOUS BLUEBERRY ACAI&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;DIET HILL MOISTURE START&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;DIET PEPPY CHERRY&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;ELF BUBBLES MIXED-FRUIT&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;FRESH BLACKBERRY&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;HILL MOISTURE ENERGY&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;HILL MOISTURE ZERO SUGAR COASTAL BLAST&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;KOOL! ZERO SUGAR MOVE&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;MOONLIT&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;PAPI CF&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;PEPPY CHERRY&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;ROYAL COLA TEN&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;SUMMIT RECTANGLE&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;VAULTLESS&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;BUBBLE JOY ADVANTAGEOUS CA RSPBY&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;CHERRY FIZZ&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;DIET BUBBLE JOY ADVANTAGEOUS W/SPLENDA&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;DIET MOONLIT&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;DIET YAWN&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;ENERGY RUSH TURBO&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;GORGEOUS ORANGEOUS ZERO&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;HILL MOISTURE MOISTURE SHINE&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;JOHN&apos;S KOLA&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;MAXIMUM RED BERRY&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;MYTHICAL BEVERAGE EXTRA STRENGTH&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;PAPI SPLASH LIME&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;PEPPY ZERO SUGAR&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;SMASH&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;SUPER-DUPER REVOLT&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;WATER WORK SPARKLING&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;BEAUTIFUL GREENER&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;CARBON PAPI&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;DIET BUBBLE JOY ADVANTAGEOUS STRAWBERRY GUAVA&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;DIET MIST TWST FREE&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;DIET SMASH&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;ELF BUBBLES ZERO CHERRY&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;GO-DAY&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;HILL MOISTURE JUMPIN-FISH&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;INTELLIGENT DRIP SPARKLING&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;LIQUORICE&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;MYTHICAL BEVERAGE ASSAULT&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;PAPI REAL SUGAR THROWBACK&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;PEPPY SUNSHINE BERRY&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;SIZZLE JUICY SODA&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;SUPER-DUPER PUNCHED&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;VITAMINAL FLOW ENERGY&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;ASTRAL BEVERAGE ZERO SUGAR&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;BUBBLE JOY ADVANTAGEOUS MOON&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;DIET BUBBLE JOY ADVANTAGEOUS CF&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;DIET HILL MOISTURE SUPER NOVA&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;DIET PEPPY CHERRY VANILLA&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;ELF BUBBLES MIXED-FRUIT ZERO&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;FRESH GRAPEFRUIT&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;HILL MOISTURE FINISH&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;HILL MOISTURE ZERO SUGAR FROST BITE&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;KOOL! ZERO SUGAR READY-TO-GO&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;MOONLIT TEN&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;PAPI CHERRY VANILLA&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;PEPPY CHERRY VANILLA&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;RULE&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;SUMMIT SANGRIA&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;VENOMOUS BLAST&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;BUBBLE JOY ADVANTAGEOUS COFFEE VANILLA&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;CUPADA ARID BOLD&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;DIET ELF BUBBLES ZERO&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;DIET PAPI LIME&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;ELF BUBBLES&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;FIESTA PEPPER&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;HANSENIZZLE&apos;S ECO&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;HILL MOISTURE SPIKED&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;KOOL! READY-TO-GO&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;MIST TWST ECO&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;MYTHICAL BEVERAGE REHAB&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;PAPI X PEEPS&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;REAL-TIME EDITIONS&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;SPARKLING JACCEPTABLETLESTER WHITE PEACH/GNGR ALE&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;TABLET&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;YAWN TROP&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;ALL-OUT ALLIGATOR REAL-TIME&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;BUBBLE JOY ADVANTAGEOUS ENERGY&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;CUPADA ARID TEN&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;DIET HILL MOISTURE&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;DIET PEPPY&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;ELF BUBBLES JAMES-BONDS MIX&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;FLUFFY&apos;S LIMITED EDITION KOOL!&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;HILL MOISTURE COASTAL BLAST&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;HILL MOISTURE THROWBACK&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;KOOL! ZERO SUGAR&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;MOISTURE DROP SPARKLING&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;ORANGE VANILLA BUBBLE JOY ADVANTAGEOUS&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;PAPI ZERO SUGAR VANILLA&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;ROOT BEER WONDER&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;STRONGLY ENERGY WATER&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;UBER MYTHICAL BEVERAGE&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;BUBBLE JOY ADVANTAGEOUS COFFEE MOCHA&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;CROWN&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;DIET CUPADA ARID CBY/GNGR ALE&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;DIET PAPI CF&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;DIGRESS IMMUNE SUPPORT&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;FANTASMIC&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;GREETINGLE COCOCOMBINATION&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;HILL MOISTURE SANGRITA BLAST&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;KEKE ENERGY ENERGY ORIGINAL&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;MEXICAN YAWN&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;MYTHICAL BEVERAGE M3&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;PAPI WILD CHERRY&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;RADIANT&apos;S&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;SPARKLING JACCEPTABLETLESTER 1783&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;SUPER-DUPER WOWWW!&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;YAWN CHERRY&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;AUTHENTIC SIP&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;BUBBLE JOY ADVANTAGEOUS W/LIME&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;DIET BUBBLE JOY ADVANTAGEOUS FSTY CHERRY&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;DIET JACKSON&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;DIET PEPPY JUICY SODA&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;ELF BUBBLES SUMMER SPICED MIXED-FRUIT&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;FRESH PEACH&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;HILL MOISTURE FROST BITE&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;HILL MOISTURE ZERO SUGAR MAJOR MELON&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;KOOL! ZERO SUGAR SHREK&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;MUTANT&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;PAPI CHRY/VAN REAL SUGAR&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;PEPPY CHERRY ZERO SUGAR&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;RULE FIRE&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;SUPER-DUPER&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;VINTAGE 1800&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;BUBBLE JOY ADVANTAGEOUS CF&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;CHERRY FIZZ ZERO&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;DIET BUBBLE JOY ADVANTAGEOUS ZSTY BO&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;DIET MUTANT&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;DIET YAWN CHERRY&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;ENERGY RUSH ZERO&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;GREETINGLE&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;HILL MOISTURE MOISTURE.S.A.&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;JUICE MYTHICAL BEVERAGE&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;MEXICAN BUBBLE JOY ADVANTAGEOUS&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;MYTHICAL BEVERAGE HYDRO&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;PAPI SPLASH MANGO&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;PLEASURE &amp; LIGHT&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;SOOOO-COOOOL FUTURE WATER&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;SUPER-DUPER RUN-FAST&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;WATERING!&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;BUBBLE JOY ADVANTAGEOUS CHERRY VANILLA&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;CINNAMON BUBBLE JOY ADVANTAGEOUS&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;DIET CHERRY FIZZ&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;DIET MYTHICAL BEVERAGE EXTRA STRENGTH&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;DIGRESS ELECTROLYTES&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;ESSENTIAL ESSSENCEL&apos;S&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;GREETINGLE ANTIWATER&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;HILL MOISTURE PITCH BLACK&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;JUICY SQUIRREL&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;MEXICAN ELF BUBBLES&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;MYTHICAL BEVERAGE IMPORT&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;PAPI SPLASH PINEAPPLE&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;POW-POW&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;SOOOO-COOOOL FUTURE WATER ZERO&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;SUPER-DUPER SPARKLING&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;WORKS WONDER ENERGY&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;BUBBLE JOY ADVANTAGEOUS COFFEE SUNSHINE BLEND&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;CUPADA ARID&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;DIET DROPTOP&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;DIET PAPI CLS SW BL&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;DROPTOP&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;FANTASMIC ZERO&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;HANSENIZZLE&apos;S&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;HILL MOISTURE SPARK&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;KOOL! MOVE&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;MIST TWST&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;MYTHICAL BEVERAGE MAXX&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;PAPI WILD CHERRY REAL SUGAR&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;REAL-TIME&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;SPARKLING JACCEPTABLETLESTER RSBY/GNGR ALE&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;SUPER-DUPER ZERO CARB&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;YAWN TEN&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;BUBBLE JOY ADVANTAGEOUS COFFEE ZERO SUGAR SUNSHINE BLEND&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;CUPADA ARID CBY/GNGR ALE&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;DIET ESSENTIAL ESSSENCEL&apos;S&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;DIET PAPI VANILLA&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;ELF BUBBLES CHERRY&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;FIZZY&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;HILL MOISTURE&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;HILL MOISTURE START&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;KOOL! SHREK&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;MIST TWST MIXED-FRUIT&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;MYTHICAL BEVERAGE ULTRA&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;PAPI ZERO SUGAR&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;REAL-TIME ZERO&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;SPEED-UP&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;TIPCAL CANARY TWISTER SODA&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;BUBBLE JOY&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;CARBONATE STREAM&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;DIET BUBBLE JOY ADVANTAGEOUS TWT MANGO&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;DIET MIST TWST MIXED-FRUIT&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;DIET SPARKLING JACCEPTABLETLESTER&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;ELF BUBBLES ZERO SUGAR GINGER&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;GORGEOUS ORANGEOUS&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;HILL MOISTURE MAJOR MELON&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;INTELLIGENT DRIP SPARKLING FLAVORED&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;MAXIMUM&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;MYTHICAL BEVERAGE DRAGON TEA&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;PAPI REMAINING&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;PEPPY YUMMY-GUMMY AND JUICY&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;SIZZLE ROOT BEER&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;SUPER-DUPER PURE ZERO&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;VITAMINAL FLOW ZERO&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;AZURE HORIZON&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;BUBBLE JOY ADVANTAGEOUS ZERO SUGAR CHERRY VANILLA&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;DIET BUBBLE JOY ADVANTAGEOUS GINGER LIME&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;DIET JUICY SQUIRREL&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;DIET ROOT BEER WONDER&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;ELF BUBBLES SUMMER SPICED MIXED-FRUIT ZERO SUGAR&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;FRESH STRAWBERRY&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;HILL MOISTURE GAME FUEL&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;HILL MOISTURE ZERO SUGAR SPARK&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;KOOL! ZERO SUGAR ULTIMATE&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;MYTHICAL BEVERAGE&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;PAPI NEXT&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;PEPPY JUICY SODA&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;RULE TEMPEST&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;SUPER-DUPER JUICED&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;VITAMINAL FLOW&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;ANCESTOR PEPPY&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;BUBBLE JOY ADVANTAGEOUS ENERGY ZERO SUGAR&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;DIET AZURE HORIZON&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;DIET HILL MOISTURE CF&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;DIET PEPPY 10&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;ELF BUBBLES LYMONADE&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;FLUFFY&apos;S LIMITED EDITION KOOL! ZERO SUGAR&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;HILL MOISTURE CODE RED&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;HILL MOISTURE WHITE OUT&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;KOOL! ZERO SUGAR CF&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;MONKEY XTRA&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;ORANGE VANILLA BUBBLE JOY ADVANTAGEOUS ZERO&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;PEPPY&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;ROOT BEER WONDER TEN&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;STUBBORN SODA&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;VANILLA BUBBLE JOY ADVANTAGEOUS&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;BUBBLE JOY ADVANTAGEOUS COFFEE CARAMEL&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;CLEAR RADIANCE PAPI&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;DIET CUPADA ARID&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;DIET PAPI&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;DIGRESS FLAVORED&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;EXCLAMATION SODA&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;GREETINGLE BUBBLES&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;HILL MOISTURE REMAINING&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;KEKE ENERGY ENERGY EXTRA STRENGTH&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;MEXICAN FANTASMIC&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;MYTHICAL BEVERAGE LO CARB&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;PAPI VANILLA REAL SUGAR&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;PRESLEY&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;SPARKLING JACCEPTABLETLESTER&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;SUPER-DUPER SUPER SOURS&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;YAWN&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;BUBBLE JOY ADVANTAGEOUS&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;CARBONATE STREAM WATERS&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;DIET BUBBLE JOY ADVANTAGEOUS W/LIME&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;DIET MITE PURE ZERO&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;DIET VANILLA BUBBLE JOY ADVANTAGEOUS&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;ENERGY RUSH&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;GORGEOUS ORANGEOUS CHERRY&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;HILL MOISTURE MERRY MASH-UP&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;JACKSON&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;MAXIMUM BLUE AGAVE&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;MYTHICAL BEVERAGE DUB EDITION&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;PAPI SPLASH BERRY&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;PEPPY YUMMY-GUMMY AND JUICY ZERO SUGAR&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;SKATEBOARD&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;SUPER-DUPER RECOVERY&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;WATER WORK FLV SPLASH SPARKLING&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;ANCIENT ELIXIR&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;BUBBLE JOY ADVANTAGEOUS FUTURE&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;DIET BUBBLE JOY ADVANTAGEOUS&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;DIET HILL MOISTURE ELECTRICITY&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;DIET PEPPY CF&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;ELF BUBBLES LYMONADE LEGACY&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;FRESH BLACK CHERRY&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;HILL MOISTURE ELECTRICITY&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;HILL MOISTURE ZERO SUGAR&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;KOOL! ZERO SUGAR MOON&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;MONKEY ZERO&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;PAPI&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;PEPPY CF&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;ROYAL COLA&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;SUMMIT GREEK&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;VANILLA BUBBLE JOY ADVANTAGEOUS ZERO&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[yr:DATE:ok]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>2020</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>2023</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>2022</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>2021</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <default-sorts>
+        <manual-sort column='[none:Forecast Indicator:nk]' direction='ASC'>
+          <dictionary>
+            <bucket>&quot;Actual&quot;</bucket>
+            <bucket>&quot;Estimate&quot;</bucket>
+          </dictionary>
+        </manual-sort>
+      </default-sorts>
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Parameter - Search Item' datatype='string' name='[Item Parameter]' param-domain-type='any' role='measure' type='nominal' value='&quot;bubbles, avocado&quot;'>
+          <calculation class='tableau' formula='&quot;bubbles, avocado&quot;' />
+        </column>
+      </datasource-dependencies>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='Data' id='Data_D7FA03402662478A9F995B324B4339A6'>
+            <properties context=''>
+              <relation connection='excel-direct.1sswckc1hzeib01722dr01mik41d' name='Data' table='[Data$]' type='table'>
+                <columns gridOrigin='A1:H10001:no:A1:H10001:0' header='yes' outcome='6'>
+                  <column datatype='string' name='Geography Name' ordinal='0' />
+                  <column datatype='integer' name='Zip' ordinal='1' />
+                  <column datatype='string' name='City' ordinal='2' />
+                  <column datatype='string' name='State' ordinal='3' />
+                  <column datatype='string' name='Segment' ordinal='4' />
+                  <column datatype='string' name='Criteria' ordinal='5' />
+                  <column datatype='integer' name='Count' ordinal='6' />
+                  <column datatype='string' name='Criteria_Unit' ordinal='7' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Data_D7FA03402662478A9F995B324B4339A6' table='[Extract].[Data_D7FA03402662478A9F995B324B4339A6]' type='table' />
+            </properties>
+          </object>
+          <object caption='FACT_MARKET_DEMAND.csv' id='FACT_MARKET_DEMAND.csv_3EC3C624F7164D459625E1D3524D5017'>
+            <properties context=''>
+              <relation connection='textscan.0o63x190tsfkgw1aux9ul19y4erh' name='FACT_MARKET_DEMAND.csv' table='[FACT_MARKET_DEMAND#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='date' name='DATE' ordinal='0' />
+                  <column datatype='integer' name='MARKET_KEY' ordinal='1' />
+                  <column datatype='string' name='CALORIC_SEGMENT' ordinal='2' />
+                  <column datatype='string' name='CATEGORY' ordinal='3' />
+                  <column datatype='real' name='UNIT_SALES' ordinal='4' />
+                  <column datatype='real' name='DOLLAR_SALES' ordinal='5' />
+                  <column datatype='string' name='MANUFACTURER' ordinal='6' />
+                  <column datatype='string' name='BRAND' ordinal='7' />
+                  <column datatype='string' name='PACKAGE' ordinal='8' />
+                  <column datatype='string' name='ITEM' ordinal='9' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='FACT_MARKET_DEMAND.csv_3EC3C624F7164D459625E1D3524D5017' table='[Extract].[FACT_MARKET_DEMAND.csv_3EC3C624F7164D459625E1D3524D5017]' type='table' />
+            </properties>
+          </object>
+          <object caption='zip_to_market_unit_mapping.csv' id='zip_to_market_unit_mapping.csv_EC7851D6617A4A088AE843771AC05B00'>
+            <properties context=''>
+              <relation connection='textscan.1gg0a5w0flwxj816sy4zu0kh0ted' name='zip_to_market_unit_mapping.csv' table='[zip_to_market_unit_mapping#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='integer' name='ZIP_CODE' ordinal='0' />
+                  <column datatype='integer' name='MARKET_KEY' ordinal='1' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='zip_to_market_unit_mapping.csv_EC7851D6617A4A088AE843771AC05B00' table='[Extract].[zip_to_market_unit_mapping.csv_EC7851D6617A4A088AE843771AC05B00]' type='table' />
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[ZIP_CODE]' />
+              <expression op='[Zip]' />
+            </expression>
+            <first-end-point object-id='zip_to_market_unit_mapping.csv_EC7851D6617A4A088AE843771AC05B00' />
+            <second-end-point object-id='Data_D7FA03402662478A9F995B324B4339A6' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[MARKET_KEY]' />
+              <expression op='[MARKET_KEY (zip_to_market_unit_mapping.csv)]' />
+            </expression>
+            <first-end-point object-id='FACT_MARKET_DEMAND.csv_3EC3C624F7164D459625E1D3524D5017' />
+            <second-end-point object-id='zip_to_market_unit_mapping.csv_EC7851D6617A4A088AE843771AC05B00' />
+          </relationship>
+        </relationships>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <actions>
+    <action caption='Filter 1 (generated) 1 1' name='[Action6_E5DFA4EDFD7B44C29DC96CFE15A53642]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Swire Coca-Cola Innovation Product Demand Forecast ' type='sheet' worksheet='Map' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Swire Coca-Cola Innovation Product Demand Forecast ' />
+      </command>
+    </action>
+    <action caption='Filter 3 (generated)' name='[Action6_E6E2C68BCD05408696350A0442E4E5BD]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='Swire Coca-Cola Innovation Product Demand Forecast ' type='sheet' worksheet='Average Unit Sales' />
+      <command command='tsc:tsl-filter'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Swire Coca-Cola Innovation Product Demand Forecast ' />
+      </command>
+    </action>
+  </actions>
+  <worksheets>
+    <worksheet name='Average Unit Sales'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#666666' fontname='Tableau Bold'>&lt;Sheet Name&gt;: </run>
+            <run>Æ&#10;</run>
+            <run fontcolor='#666666' fontname='Tableau Medium' fontsize='10'><![CDATA[Category: <[federated.1lvxs3r1gu5qps116lsjl10k97jn].[none:CATEGORY:nk]>  kcal: <[federated.1lvxs3r1gu5qps116lsjl10k97jn].[none:CALORIC_SEGMENT:nk]>   mfg: <[federated.1lvxs3r1gu5qps116lsjl10k97jn].[none:MANUFACTURER:nk]>  ]]></run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='FACT_MARKET_DEMAND' name='federated.1lvxs3r1gu5qps116lsjl10k97jn' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1lvxs3r1gu5qps116lsjl10k97jn'>
+            <column caption='Caloric Segment' datatype='string' name='[CALORIC_SEGMENT]' role='dimension' type='nominal' />
+            <column caption='Category' datatype='string' name='[CATEGORY]' role='dimension' type='nominal' />
+            <column caption='Date' datatype='date' name='[DATE]' role='dimension' type='ordinal' />
+            <column caption='Item' datatype='string' name='[ITEM]' role='dimension' type='nominal' />
+            <column caption='Manufacturer' datatype='string' name='[MANUFACTURER]' role='dimension' type='nominal' />
+            <column caption='Unit Sales' datatype='real' name='[UNIT_SALES]' role='measure' type='quantitative' />
+            <column aggregation='Sum' caption='Zip Code' datatype='integer' default-format='*00000' name='[ZIP_CODE]' role='dimension' semantic-role='[ZipCode].[Name]' type='ordinal' />
+            <column-instance column='[UNIT_SALES]' derivation='Avg' name='[avg:UNIT_SALES:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[DATE]' derivation='Day' name='[dy:DATE:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[CALORIC_SEGMENT]' derivation='None' name='[none:CALORIC_SEGMENT:nk]' pivot='key' type='nominal' />
+            <column-instance column='[CATEGORY]' derivation='None' name='[none:CATEGORY:nk]' pivot='key' type='nominal' />
+            <column-instance column='[ITEM]' derivation='None' name='[none:ITEM:nk]' pivot='key' type='nominal' />
+            <column-instance column='[MANUFACTURER]' derivation='None' name='[none:MANUFACTURER:nk]' pivot='key' type='nominal' />
+            <column-instance column='[DATE]' derivation='Week' name='[wk:DATE:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[DATE]' derivation='Week' name='[wk:DATE:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[DATE]' derivation='Year' name='[yr:DATE:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[Action (Zip Code)]'>
+            <groupfilter function='level-members' level='[ZIP_CODE]' user:ui-action-filter='[Action5_801D05FA07DD46C6858CE59AC52F3E75]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[none:CALORIC_SEGMENT:nk]' filter-group='9'>
+            <groupfilter function='level-members' level='[none:CALORIC_SEGMENT:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[none:CATEGORY:nk]' filter-group='3'>
+            <groupfilter function='level-members' level='[none:CATEGORY:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[none:ITEM:nk]' filter-group='7'>
+            <groupfilter function='level-members' level='[none:ITEM:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[none:MANUFACTURER:nk]' filter-group='5'>
+            <groupfilter function='level-members' level='[none:MANUFACTURER:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='quantitative' column='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[wk:DATE:qk]' filter-group='6' included-values='in-range'>
+            <min>1</min>
+            <max>53</max>
+          </filter>
+          <slices>
+            <column>[federated.1lvxs3r1gu5qps116lsjl10k97jn].[none:MANUFACTURER:nk]</column>
+            <column>[federated.1lvxs3r1gu5qps116lsjl10k97jn].[wk:DATE:qk]</column>
+            <column>[federated.1lvxs3r1gu5qps116lsjl10k97jn].[none:CATEGORY:nk]</column>
+            <column>[federated.1lvxs3r1gu5qps116lsjl10k97jn].[none:ITEM:nk]</column>
+            <column>[federated.1lvxs3r1gu5qps116lsjl10k97jn].[Action (Zip Code)]</column>
+            <column>[federated.1lvxs3r1gu5qps116lsjl10k97jn].[none:CALORIC_SEGMENT:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='label'>
+            <format attr='text-orientation' field='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[yr:DATE:ok]' value='-90' />
+            <format attr='text-orientation' field='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[dy:DATE:ok]' value='-90' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='size' field='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[none:CALORIC_SEGMENT:nk]' field-type='nominal' max-size='1' min-size='0.230411' type='catsize' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='background-color' id='refline2' value='#ffffffa7' />
+          </style-rule>
+          <style-rule element='refband'>
+            <format attr='fill-color' id='refline2' value='#f5eddc' />
+            <format attr='reverse-palette' id='refline2' value='false' />
+            <format attr='line-visibility' id='refline2' value='on' />
+            <format attr='line-pattern-only' id='refline2' value='solid' />
+            <format attr='stroke-size' id='refline2' value='1' />
+            <format attr='stroke-color' id='refline2' value='#f28e2b' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='line-pattern-only' scope='rows' value='solid' />
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+          <style-rule element='title'>
+            <format attr='background-color' value='#00000000' />
+            <format attr='border-color' value='#666666' />
+            <format attr='border-width' value='0' />
+            <format attr='border-style' value='none' />
+          </style-rule>
+          <style-rule element='legend-title-text'>
+            <format attr='color' field='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[yr:DATE:ok]' value='Year' />
+          </style-rule>
+          <style-rule element='quick-filter'>
+            <format attr='title' field='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[wk:DATE:qk]' value='Week' />
+            <format attr='background-color' value='#00000000' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[yr:DATE:ok]' />
+            </encodings>
+            <trendline degree='6' enable-confidence-bands='true' enable-instant-analytics='true' enabled='true' exclude-color='false' exclude-intercept='false' fit='polynomial'>
+              <excluded-factors>
+                <column>[federated.1lvxs3r1gu5qps116lsjl10k97jn].[yr:DATE:ok]</column>
+              </excluded-factors>
+            </trendline>
+            <reference-line axis-column='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[avg:UNIT_SALES:qk]' enable-instant-analytics='true' fill-above='false' fill-below='false' formula='average' id='refline2' label-type='none' percentage-bands='true' probability='95' scope='per-cell' symmetric='false' value-column='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[avg:UNIT_SALES:qk]' z-order='1'>
+              <reference-line-value percentage='15' />
+              <reference-line-value percentage='30' />
+            </reference-line>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='0.49375692009925842' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1lvxs3r1gu5qps116lsjl10k97jn].[avg:UNIT_SALES:qk]</rows>
+        <cols>[federated.1lvxs3r1gu5qps116lsjl10k97jn].[wk:DATE:ok]</cols>
+      </table>
+      <simple-id uuid='{6C139471-8339-4A24-B3D2-7F9C06F7DE82}' />
+    </worksheet>
+    <worksheet name='Map'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='FACT_MARKET_DEMAND' name='federated.1lvxs3r1gu5qps116lsjl10k97jn' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.1lvxs3r1gu5qps116lsjl10k97jn'>
+            <column caption='Caloric Segment' datatype='string' name='[CALORIC_SEGMENT]' role='dimension' type='nominal' />
+            <column caption='Category' datatype='string' name='[CATEGORY]' role='dimension' type='nominal' />
+            <column datatype='string' name='[City]' role='dimension' semantic-role='[City].[Name]' type='nominal' />
+            <column caption='Date' datatype='date' name='[DATE]' role='dimension' type='ordinal' />
+            <column caption='Item' datatype='string' name='[ITEM]' role='dimension' type='nominal' />
+            <column caption='Manufacturer' datatype='string' name='[MANUFACTURER]' role='dimension' type='nominal' />
+            <column datatype='string' name='[State]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column caption='Unit Sales' datatype='real' name='[UNIT_SALES]' role='measure' type='quantitative' />
+            <column aggregation='Sum' caption='Zip Code' datatype='integer' default-format='*00000' name='[ZIP_CODE]' role='dimension' semantic-role='[ZipCode].[Name]' type='ordinal' />
+            <column-instance column='[City]' derivation='Attribute' name='[attr:City:nk]' pivot='key' type='nominal' />
+            <column-instance column='[State]' derivation='Attribute' name='[attr:State:nk]' pivot='key' type='nominal' />
+            <column-instance column='[UNIT_SALES]' derivation='Avg' name='[avg:UNIT_SALES:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[CALORIC_SEGMENT]' derivation='None' name='[none:CALORIC_SEGMENT:nk]' pivot='key' type='nominal' />
+            <column-instance column='[CATEGORY]' derivation='None' name='[none:CATEGORY:nk]' pivot='key' type='nominal' />
+            <column-instance column='[ITEM]' derivation='None' name='[none:ITEM:nk]' pivot='key' type='nominal' />
+            <column-instance column='[MANUFACTURER]' derivation='None' name='[none:MANUFACTURER:nk]' pivot='key' type='nominal' />
+            <column-instance column='[ZIP_CODE]' derivation='None' name='[none:ZIP_CODE:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[DATE]' derivation='Week' name='[wk:DATE:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[DATE]' derivation='Week' name='[wk:DATE:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[DATE]' derivation='Year' name='[yr:DATE:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[Action (YEAR(Date),WEEK(Date))]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action6_E6E2C68BCD05408696350A0442E4E5BD]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[yr:DATE:ok]' />
+              <groupfilter function='level-members' level='[wk:DATE:ok]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[Caloric Segment Set]'>
+            <groupfilter function='level-members' level='[none:CALORIC_SEGMENT:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='quantitative' column='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[Latitude (generated)]' included-values='non-null' />
+          <filter class='quantitative' column='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[Longitude (generated)]' included-values='non-null' />
+          <filter class='categorical' column='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[none:CALORIC_SEGMENT:nk]' filter-group='9'>
+            <groupfilter function='level-members' level='[none:CALORIC_SEGMENT:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[none:CATEGORY:nk]' filter-group='3'>
+            <groupfilter function='level-members' level='[none:CATEGORY:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[none:ITEM:nk]' filter-group='7'>
+            <groupfilter function='level-members' level='[none:ITEM:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[none:MANUFACTURER:nk]' filter-group='5'>
+            <groupfilter function='level-members' level='[none:MANUFACTURER:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='quantitative' column='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[wk:DATE:qk]' filter-group='6' included-values='in-range'>
+            <min>1</min>
+            <max>53</max>
+          </filter>
+          <slices>
+            <column>[federated.1lvxs3r1gu5qps116lsjl10k97jn].[none:MANUFACTURER:nk]</column>
+            <column>[federated.1lvxs3r1gu5qps116lsjl10k97jn].[Latitude (generated)]</column>
+            <column>[federated.1lvxs3r1gu5qps116lsjl10k97jn].[Longitude (generated)]</column>
+            <column>[federated.1lvxs3r1gu5qps116lsjl10k97jn].[none:CATEGORY:nk]</column>
+            <column>[federated.1lvxs3r1gu5qps116lsjl10k97jn].[none:CALORIC_SEGMENT:nk]</column>
+            <column>[federated.1lvxs3r1gu5qps116lsjl10k97jn].[wk:DATE:qk]</column>
+            <column>[federated.1lvxs3r1gu5qps116lsjl10k97jn].[none:ITEM:nk]</column>
+            <column>[federated.1lvxs3r1gu5qps116lsjl10k97jn].[Caloric Segment Set]</column>
+            <column>[federated.1lvxs3r1gu5qps116lsjl10k97jn].[Action (YEAR(Date),WEEK(Date))]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[Longitude (generated)]' field-type='quantitative' max='-8147775.3870783746' min='-15075847.321433917' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[Latitude (generated)]' field-type='quantitative' max='6377932.9368825089' min='3479596.4716889029' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[avg:UNIT_SALES:qk]' max='450.0' palette='tableau-map-temperatur' type='interpolated' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='omit-on-special' field='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[none:ZIP_CODE:ok]' value='false' />
+            <format attr='break-on-special' field='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[none:ZIP_CODE:ok]' value='false' />
+            <format attr='show-null-value-warning' field='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[none:ZIP_CODE:ok]' value='false' />
+          </style-rule>
+          <style-rule element='legend'>
+            <format attr='col-width' field='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[avg:UNIT_SALES:qk]' value='70' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+          <style-rule element='quick-filter'>
+            <format attr='title' field='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[none:ITEM:nk]' value='Item search'>
+              <formatted-text>
+                <run>Item search</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[avg:UNIT_SALES:qk]' />
+              <size column='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[avg:UNIT_SALES:qk]' />
+              <lod column='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[none:ZIP_CODE:ok]' />
+              <tooltip column='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[attr:City:nk]' />
+              <tooltip column='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[attr:State:nk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run bold='true' fontname='Tableau Bold' fontsize='11'><![CDATA[<[federated.1lvxs3r1gu5qps116lsjl10k97jn].[attr:City:nk]>, <[federated.1lvxs3r1gu5qps116lsjl10k97jn].[attr:State:nk]> ]]></run>
+                <run><![CDATA[
+Zip code: <[federated.1lvxs3r1gu5qps116lsjl10k97jn].[none:ZIP_CODE:ok]>
+Average Weekly Sales:]]></run>
+                <run bold='true'>Æ </run>
+                <run bold='true' fontname='Tableau Bold'><![CDATA[<[federated.1lvxs3r1gu5qps116lsjl10k97jn].[avg:UNIT_SALES:qk]>]]></run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1lvxs3r1gu5qps116lsjl10k97jn].[Latitude (generated)]</rows>
+        <cols>[federated.1lvxs3r1gu5qps116lsjl10k97jn].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{F2BF4747-6541-4A4D-86B3-2B302FE2C391}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='Swire Coca-Cola Innovation Product Demand Forecast '>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#ffffff'>&lt;Sheet Name&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <style>
+        <style-rule element='dash-title'>
+          <format attr='font-weight' value='normal' />
+          <format attr='font-family' value='Tableau Bold' />
+          <format attr='color' value='#555555' />
+          <format attr='background-color' value='#526870' />
+        </style-rule>
+      </style>
+      <size maxheight='900' maxwidth='1366' minheight='900' minwidth='1366' preset-index='0' sizing-mode='fixed' />
+      <datasources>
+        <datasource caption='FACT_MARKET_DEMAND' name='federated.1lvxs3r1gu5qps116lsjl10k97jn' />
+      </datasources>
+      <datasource-dependencies datasource='federated.1lvxs3r1gu5qps116lsjl10k97jn'>
+        <column caption='Caloric Segment' datatype='string' name='[CALORIC_SEGMENT]' role='dimension' type='nominal' />
+        <column caption='Category' datatype='string' name='[CATEGORY]' role='dimension' type='nominal' />
+        <column caption='Date' datatype='date' name='[DATE]' role='dimension' type='ordinal' />
+        <column caption='Item' datatype='string' name='[ITEM]' role='dimension' type='nominal' />
+        <column caption='Manufacturer' datatype='string' name='[MANUFACTURER]' role='dimension' type='nominal' />
+        <column-instance column='[CALORIC_SEGMENT]' derivation='None' name='[none:CALORIC_SEGMENT:nk]' pivot='key' type='nominal' />
+        <column-instance column='[CATEGORY]' derivation='None' name='[none:CATEGORY:nk]' pivot='key' type='nominal' />
+        <column-instance column='[ITEM]' derivation='None' name='[none:ITEM:nk]' pivot='key' type='nominal' />
+        <column-instance column='[MANUFACTURER]' derivation='None' name='[none:MANUFACTURER:nk]' pivot='key' type='nominal' />
+        <column-instance column='[DATE]' derivation='Week' name='[wk:DATE:qk]' pivot='key' type='quantitative' />
+      </datasource-dependencies>
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98222' id='38' param='vert' type-v2='layout-flow' w='98828' x='586' y='889'>
+            <zone h='5445' id='39' type-v2='title' w='98828' x='586' y='889'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='92777' id='36' type-v2='layout-basic' w='98828' x='586' y='6334'>
+              <zone h='49777' id='8' param='horz' type-v2='layout-flow' w='98828' x='586' y='6334'>
+                <zone fixed-size='956' h='49777' id='3' is-fixed='true' param='vert' type-v2='layout-flow' w='69985' x='586' y='6334'>
+                  <zone h='49777' id='19' is-fixed='true' type-v2='layout-basic' w='69985' x='586' y='6334'>
+                    <zone h='49777' id='5' param='horz' type-v2='layout-flow' w='69985' x='586' y='6334'>
+                      <zone fixed-size='861' h='49777' id='16' is-fixed='true' name='Map' show-title='false' w='69985' x='586' y='6334'>
+                        <layout-cache minheight='201' minwidth='201' type-h='scalable' type-w='scalable' />
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                    </zone>
+                  </zone>
+                </zone>
+                <zone h='49777' id='61' param='vert' type-v2='layout-flow' w='28843' x='70571' y='6334'>
+                  <zone fixed-size='30' forceUpdate='true' h='4222' id='62' is-fixed='true' type-v2='text' w='28551' x='70717' y='6556'>
+                    <formatted-text>
+                      <run bold='true' fontname='Tableau Bold' fontsize='12'>Product Filters</run>
+                    </formatted-text>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='margin' value='4' />
+                    </zone-style>
+                  </zone>
+                  <zone fixed-size='422' h='45111' id='51' is-fixed='true' layout-strategy-id='distribute-evenly' param='horz' type-v2='layout-flow' w='28551' x='70717' y='10778'>
+                    <zone h='45111' id='48' param='vert' type-v2='layout-flow' w='14276' x='70717' y='10778'>
+                      <zone fixed-size='247' h='25666' id='32' is-fixed='true' mode='checklist' name='Map' param='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[none:CATEGORY:nk]' show-apply='true' type-v2='filter' values='relevant' w='13910' x='70717' y='10778'>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                      <zone fixed-size='71' h='8778' id='34' is-fixed='true' mode='checklist' name='Map' param='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[none:CALORIC_SEGMENT:nk]' show-all='false' show-morefewerbutton='true' type-v2='filter' values='relevant' w='13910' x='70717' y='36444'>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                      <zone fixed-size='88' h='10667' id='33' is-fixed='true' name='Map' param='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[wk:DATE:qk]' show-domain='false' show-null-ctrls='false' type-v2='filter' w='13910' x='70717' y='45222'>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='padding-right' value='5' />
+                      </zone-style>
+                    </zone>
+                    <zone fixed-size='156' h='45111' id='52' is-fixed='true' param='vert' type-v2='layout-flow' w='14275' x='84993' y='10778'>
+                      <zone fixed-size='330' h='35555' id='35' is-fixed='true' mode='checklist' name='Map' param='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[none:MANUFACTURER:nk]' show-apply='true' type-v2='filter' values='relevant' w='14275' x='84993' y='10778'>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                      <zone fixed-size='78' h='9556' id='31' is-fixed='true' mode='pattern' name='Map' param='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[none:ITEM:nk]' type-v2='filter' w='14275' x='84993' y='46333'>
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                    </zone>
+                    <zone-style>
+                      <format attr='border-color' value='#000000' />
+                      <format attr='border-style' value='none' />
+                      <format attr='border-width' value='0' />
+                      <format attr='padding' value='0' />
+                    </zone-style>
+                  </zone>
+                  <zone-style>
+                    <format attr='border-color' value='#b4b4b4' />
+                    <format attr='border-style' value='solid' />
+                    <format attr='border-width' value='2' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone h='43000' id='29' param='horz' type-v2='layout-flow' w='98828' x='586' y='56111'>
+                <zone h='43000' id='55' name='Average Unit Sales' w='92057' x='586' y='56111'>
+                  <layout-cache cell-count-w='53' minheight='253' non-cell-size-w='68' type-h='scalable' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='84' h='43000' id='56' is-fixed='true' name='Average Unit Sales' pane-specification-id='2' param='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[yr:DATE:ok]' type-v2='color' w='6735' x='92643' y='56111'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+        <zone h='33333' id='28' param='vert' type-v2='layout-flow' w='9078' x='60469' y='8444'>
+          <zone fixed-size='75' h='9222' id='17' is-fixed='true' name='Map' pane-specification-id='0' param='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[avg:UNIT_SALES:qk]' type-v2='color' w='8932' x='60542' y='8555'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone fixed-size='305' h='23889' id='18' is-fixed='true' name='Map' pane-specification-id='0' param='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[avg:UNIT_SALES:qk]' type-v2='size' w='8932' x='60542' y='17777'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#c0c0c0' />
+            <format attr='border-style' value='solid' />
+            <format attr='border-width' value='1' />
+            <format attr='background-color' value='#ffffff' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <layout-options>
+            <title>
+              <formatted-text>
+                <run fontcolor='#ffffff'>&lt;Sheet Name&gt;</run>
+              </formatted-text>
+            </title>
+          </layout-options>
+          <size maxheight='1250' minheight='1250' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='78' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98222' id='77' param='vert' type-v2='layout-flow' w='98828' x='586' y='889'>
+                <zone h='5445' id='39' type-v2='title' w='98828' x='586' y='889'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='247' h='25666' id='32' mode='checkdropdown' name='Map' param='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[none:CATEGORY:nk]' show-apply='true' type-v2='filter' values='relevant' w='13910' x='70717' y='10778'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='71' h='8778' id='34' mode='checkdropdown' name='Map' param='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[none:CALORIC_SEGMENT:nk]' show-all='false' show-morefewerbutton='true' type-v2='filter' values='relevant' w='13910' x='70717' y='36444'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='88' h='10667' id='33' name='Map' param='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[wk:DATE:qk]' show-domain='false' show-null-ctrls='false' type-v2='filter' w='13910' x='70717' y='45222'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='330' h='35555' id='35' mode='checkdropdown' name='Map' param='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[none:MANUFACTURER:nk]' show-apply='true' type-v2='filter' values='relevant' w='14275' x='84993' y='10778'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='78' h='9556' id='31' mode='pattern' name='Map' param='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[none:ITEM:nk]' type-v2='filter' w='14275' x='84993' y='46333'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='49777' id='16' is-fixed='true' name='Map' show-title='false' w='69985' x='586' y='6334'>
+                  <layout-cache minheight='201' minwidth='201' type-h='scalable' type-w='scalable' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='75' h='9222' id='17' name='Map' pane-specification-id='0' param='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[avg:UNIT_SALES:qk]' type-v2='color' w='8932' x='60542' y='8555'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='305' h='23889' id='18' name='Map' pane-specification-id='0' param='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[avg:UNIT_SALES:qk]' type-v2='size' w='8932' x='60542' y='17777'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='30' forceUpdate='true' h='4222' id='62' type-v2='text' w='28551' x='70717' y='6556'>
+                  <formatted-text>
+                    <run bold='true' fontname='Tableau Bold' fontsize='12'>Product Filters</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='43000' id='55' is-fixed='true' name='Average Unit Sales' w='92057' x='586' y='56111'>
+                  <layout-cache cell-count-w='53' minheight='253' non-cell-size-w='68' type-h='scalable' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='84' h='43000' id='56' name='Average Unit Sales' pane-specification-id='2' param='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[yr:DATE:ok]' type-v2='color' w='6735' x='92643' y='56111'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{FFAD75D6-A483-49CD-BD1F-37E8F45C58CA}' />
+    </dashboard>
+  </dashboards>
+  <windows saved-dpi-scale-factor='1.25' source-height='63'>
+    <window class='dashboard' maximized='true' name='Swire Coca-Cola Innovation Product Demand Forecast '>
+      <viewpoints>
+        <viewpoint name='Average Unit Sales'>
+          <zoom type='entire-view' />
+          <highlight>
+            <color-one-way>
+              <field>[federated.1lvxs3r1gu5qps116lsjl10k97jn].[yr:DATE:ok]</field>
+            </color-one-way>
+          </highlight>
+        </viewpoint>
+        <viewpoint name='Map'>
+          <zoom type='entire-view' />
+          <default-map-tool-selection tool='8' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <device-preview visible='true' />
+      <simple-id uuid='{47A21274-9D66-453B-92A6-A1A50A39B35D}' />
+    </window>
+    <window class='worksheet' hidden='true' name='Average Unit Sales'>
+      <cards>
+        <edge name='left'>
+          <strip size='128'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='24'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='128'>
+            <card param='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[none:CALORIC_SEGMENT:nk]' type='filter' />
+            <card mode='pattern' param='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[none:ITEM:nk]' type='filter' />
+            <card param='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[none:CATEGORY:nk]' type='filter' />
+            <card param='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[wk:DATE:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
+            <card param='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[none:MANUFACTURER:nk]' type='filter' />
+            <card pane-specification-id='2' param='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[yr:DATE:ok]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1lvxs3r1gu5qps116lsjl10k97jn].[none:Calculation_1959347316881645568:nk]</field>
+            <field>[federated.1lvxs3r1gu5qps116lsjl10k97jn].[yr:DATE:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{6E20E3E0-5DF5-4DEA-B836-6BD6C95B8144}' />
+    </window>
+    <window class='worksheet' hidden='true' name='Map'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[none:MANUFACTURER:nk]' type='filter' />
+            <card param='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[none:CALORIC_SEGMENT:nk]' type='filter' />
+            <card param='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[none:CATEGORY:nk]' type='filter' />
+          </strip>
+          <strip size='100'>
+            <card pane-specification-id='0' param='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[avg:UNIT_SALES:qk]' type='color' />
+            <card pane-specification-id='0' param='[federated.1lvxs3r1gu5qps116lsjl10k97jn].[avg:UNIT_SALES:qk]' type='size' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <default-map-tool-selection tool='1' />
+      </viewpoint>
+      <simple-id uuid='{273007F0-1F6F-4084-9E4E-ABAD3BC3070B}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Swire Coca-Cola Innovation Product Demand Forecast ' width='192'>
+      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
+      rkJggg==
+    </thumbnail>
+  </thumbnails>
+</workbook>
