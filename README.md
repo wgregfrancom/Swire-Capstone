@@ -26,10 +26,31 @@ Detailed Report of Findings and Model Predictions: A comprehensive report encomp
 Customized Demand Forecasting Model: A tailored forecasting model for Swire to continuously forecast weekly demand for new products.
 
 ## Project Details
-This project will be executed by the members of Team 4, the Fizz Wizards, and delivered April 10, 2024. The following is a list of project milestones:
+This project will be executed by the members of Team 4, the Fizz Wizards, and delivered on April 10, 2024. The following is a list of project milestones:
 
 **Business Problem Statement Delivery**
 - Exploratory Analysis
 - Forecasting Model
 - Presentation Draft
-- Final Presentation 
+- Final Presentation
+ 
+
+# Post-Project update and deliverables
+Using historical data to predict new products is not without its challenges. Using competitor's data is valuable for creating a landscape analysis and setting benchmarks. At other times, the innovation product could be so similar to the legacy products of Swire that only using their data would be relevant. Due to the wide net of questions and product exploration, I opted to expand on my EDA worksheets and create a customizable dashboard in Tableau that members of Swire's Innovation Product team could access and view weekly unit sales. 
+
+I created a Tableau dashboard that displays average unit sale trends and geography filtered by product characteristics data. Broken up by year with an average trendline, and a customizable reference band that shows a percentage of the weekly average. 
+
+I like the idea of a dashboard for a few reasons:
+- It is customizable, easy, and quick - anyone can select the traits, time period, and location they want and get a good estimate of sales without having to wait on the data analytics team.
+- There are a lot of questions, and it made me think of past projects where you offered a solution and leadership would ask for info on alternatives. What if Swire said: “Great! What if it was diet? What if it was in Arizona? What if the flavor was snozzberries?”
+- The data is anonymized and masked, and I wonder if there is institutional knowledge that is also masked that we, being so removed, would not know about. Subject matter experts are able to include and omit the relevant info independently of the data analyst. 
+
+I hypothesized that for some of these questions, Swire’s data may be the best data to use based on the assumptions that it is a 
+- Similar product
+- Similar price
+- Similar distribution 
+- And the sales promotions would include both legacy and innovation products
+
+Anecdotally, I was able to observe this in action on a recent road trip when we stopped at a gas station that was running a promotion of “buy 2 for $4” and watched my buddy buy a regular Coke and a Coke Spiced bottle. 
+
+
